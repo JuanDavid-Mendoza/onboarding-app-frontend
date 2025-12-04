@@ -9,8 +9,8 @@ import { useTheme } from "next-themes"
 import { cn } from "@/lib/utils"
 
 const collaboratorMenuItems = [
-  { name: "Mis Onboardings", icon: FiFileText, path: "/colaborador/mis-onboardings" },
-  { name: "Calendario", icon: FiCalendar, path: "/colaborador/calendario" },
+  { name: "Mis Onboardings", icon: FiFileText, path: "/collaborator/onboardings" },
+  { name: "Calendario", icon: FiCalendar, path: "/collaborator/calendar" },
 ]
 
 export function CollaboratorSidebar() {

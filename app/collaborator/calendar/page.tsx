@@ -48,16 +48,23 @@ function ColaboradorCalendarioContent() {
     loadMyOnboardings()
   }, [user, getUserOnboardings, toast])
 
-  const events = myOnboardings.map((onboarding) => ({
-    title: onboarding.name,
-    start: onboarding.start_date,
-    end: onboarding.end_date,
-    backgroundColor: onboarding.color,
-    borderColor: onboarding.color,
-    extendedProps: {
-      onboarding,
-    },
-  }))
+  const events = myOnboardings.map((onboarding) => {
+    const endDate = new Date(onboarding.end_date.split('T')[0])
+    endDate.setDate(endDate.getDate() + 1)
+    const endDateString = endDate.toISOString().split('T')[0]
+    
+    return {
+      title: onboarding.name,
+      start: onboarding.start_date.split('T')[0],
+      end: endDateString,
+      allDay: true,
+      backgroundColor: onboarding.color,
+      borderColor: onboarding.color,
+      extendedProps: {
+        onboarding,
+      },
+    }
+  })
 
   const handleEventClick = (info: any) => {
     setSelectedOnboarding(info.event.extendedProps.onboarding)
@@ -190,6 +197,10 @@ function ColaboradorCalendarioContent() {
         .calendar-container .fc-daygrid-day-number {
           color: hsl(var(--foreground));
           padding: 8px;
+        }
+
+        .calendar-container .fc-daygrid-day-top {
+          justify-content: center;
         }
 
         .calendar-container .fc-event {

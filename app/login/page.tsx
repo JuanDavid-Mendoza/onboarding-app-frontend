@@ -34,7 +34,7 @@ export default function LoginPage() {
       if (user.role_id == 1) {
         router.push("/dashboard")
       } else {
-        router.push("/colaborador/mis-onboardings")
+        router.push("/collaborator/onboardings")
       }
     }
   }, [isAuthenticated, user, loading, router])
@@ -73,7 +73,7 @@ export default function LoginPage() {
           if (user.role_id == 1) {
             router.push("/dashboard")
           } else {
-            router.push("/colaborador/mis-onboardings")
+            router.push("/collaborator/onboardings")
           }
         }
       } else {

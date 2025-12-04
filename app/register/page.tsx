@@ -41,7 +41,7 @@ export default function RegisterPage() {
       if (user.role_id == 1) {
         router.push("/dashboard")
       } else {
-        router.push("/colaborador/mis-onboardings")
+        router.push("/collaborator/onboardings")
       }
     }
   }, [isAuthenticated, user, loading, router])
@@ -78,7 +78,7 @@ export default function RegisterPage() {
       })
 
       setTimeout(() => {
-        window.location.href = "/colaborador/mis-onboardings"
+        window.location.href = "/collaborator/onboardings"
       }, 1000)
     } catch (error) {
       toast({
