@@ -6,7 +6,6 @@ import { UserService } from './services/user.service'
 import { OnboardingService } from './services/onboarding.service'
 import { UserOnboardingService } from './services/user-onboarding.service'
 
-// Facade que expone todos los servicios
 export class ApiService {
   // Authentication
   static login = AuthService.login.bind(AuthService)
@@ -31,3 +30,4 @@ export class ApiService {
   static updateUserOnboarding = UserOnboardingService.updateState.bind(UserOnboardingService)
   static unassignOnboarding = UserOnboardingService.unassign.bind(UserOnboardingService)
 }
+

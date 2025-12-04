@@ -69,7 +69,7 @@ export default function RegisterPage() {
         name: values.name,
         email: values.email,
         password: values.password,
-        role_id: 2, // Colaborador
+        role_id: 2,
       })
 
       toast({

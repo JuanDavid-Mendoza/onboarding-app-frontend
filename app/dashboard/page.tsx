@@ -12,7 +12,6 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { FiPlus, FiEye, FiTrash2, FiSearch } from "react-icons/fi"
 import { UserDetailModal } from "@/components/user-detail-modal"
-// import { CreateUserModal } from "@/components/create-user-modal"
 import { useToast } from "@/hooks/use-toast"
 import { Toaster } from "@/components/ui/toaster"
 import {

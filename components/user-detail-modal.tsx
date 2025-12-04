@@ -95,7 +95,6 @@ export function UserDetailModal({ user, isOpen, onClose }: UserDetailModalProps)
 
   const handleToggleOnboardingState = async (onboardingId: number, currentState: number) => {
     try {
-      // State: 0 = pending, 1 = completed
       const newState = currentState == 1 ? 0 : 1
       await updateUserOnboarding(user.id, onboardingId, newState)
 
