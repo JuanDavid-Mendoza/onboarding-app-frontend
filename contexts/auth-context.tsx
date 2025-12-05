@@ -7,7 +7,6 @@ import { ApiService, TokenManager, type User } from "@/api/api-backend"
 interface AuthContextType {
   user: User | null
   login: (email: string, password: string) => Promise<boolean>
-  register: (name: string, email: string, password: string, role_id: number) => Promise<boolean>
   logout: () => void
   isAuthenticated: boolean
   loading: boolean
@@ -45,20 +44,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   }
 
-  const register = async (name: string, email: string, password: string, role_id: number): Promise<boolean> => {
-    try {
-      const response = await ApiService.register({ name, email, password, role_id })
-      
-      setUser(response.user)
-      setIsAuthenticated(true)
-      
-      return true
-    } catch (error) {
-      console.error('Register error:', error)
-      return false
-    }
-  }
-
   const logout = () => {
     ApiService.logout()
     setUser(null)
@@ -66,7 +51,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <AuthContext.Provider value={{ user, login, register, logout, isAuthenticated, loading }}>
+    <AuthContext.Provider value={{ user, login, logout, isAuthenticated, loading }}>
       {children}
     </AuthContext.Provider>
   )

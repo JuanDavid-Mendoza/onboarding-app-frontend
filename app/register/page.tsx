@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
+import { ApiService } from "@/api/api-backend"
 import { useAuth } from "@/contexts/auth-context"
 import { Formik, Form, Field, ErrorMessage } from "formik"
 import * as Yup from "yup"
@@ -29,7 +30,7 @@ const registerSchema = Yup.object().shape({
 
 export default function RegisterPage() {
   const router = useRouter()
-  const { isAuthenticated, user, loading, register } = useAuth()
+  const { isAuthenticated, user, loading } = useAuth()
   const { theme, setTheme } = useTheme()
   const { toast } = useToast()
   const [isLoading, setIsLoading] = useState(false)
@@ -64,25 +65,21 @@ export default function RegisterPage() {
     setIsLoading(true)
 
     try {
-      const success = await register(values.name, values.email, values.password, 2)
+      const response = await ApiService.register({
+        name: values.name,
+        email: values.email,
+        password: values.password,
+        role_id: 2,
+      })
 
-      if (success) {
-        toast({
-          title: "Registro exitoso",
-          description: "Te has registrado exitosamente. Redirigiendo...",
-        })
+      toast({
+        title: "Registro exitoso",
+        description: "Te has registrado exitosamente. Redirigiendo...",
+      })
 
-        // Dar tiempo para que el toast se muestre antes de redirigir
-        setTimeout(() => {
-          router.push("/collaborator/onboardings")
-        }, 500)
-      } else {
-        toast({
-          title: "Error en el registro",
-          description: "No se pudo completar el registro. Por favor, intenta nuevamente.",
-          variant: "destructive",
-        })
-      }
+      setTimeout(() => {
+        window.location.href = "/collaborator/onboardings"
+      }, 1000)
     } catch (error) {
       toast({
         title: "Error en el registro",
