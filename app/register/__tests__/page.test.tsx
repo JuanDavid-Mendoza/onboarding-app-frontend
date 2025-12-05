@@ -47,7 +47,7 @@ describe("RegisterPage", () => {
             render(<RegisterPage />);
 
             expect(
-                screen.getByText("Registro de Colaborador")
+                screen.getByText("Registro de Colaboradores")
             ).toBeInTheDocument();
             expect(
                 screen.getByText("Completa el formulario para crear tu cuenta")
