@@ -108,7 +108,7 @@ export default function RegisterPage() {
           </div>
           <div>
             <CardTitle className="text-2xl font-bold" style={{ color: "#003DA5" }}>
-              Registro de Colaboradores
+              Registro de Colaborador
             </CardTitle>
             <CardDescription>Completa el formulario para crear tu cuenta</CardDescription>
           </div>
