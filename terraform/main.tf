@@ -9,14 +9,14 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "gestion-tareas-frontend-tf-state"
+    bucket         = "onboarding-app-frontend-tf-state"
     key            = "terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "gestion-tareas-terraform-locks"
+    dynamodb_table = "onboarding-app-terraform-locks"
     encrypt        = true
   }
 }
-
+  
 provider "aws" {
   region = var.aws_region
 }
