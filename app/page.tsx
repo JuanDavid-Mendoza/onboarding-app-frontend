@@ -83,7 +83,7 @@ export default function LandingPage() {
                         <Button
                             variant="outline"
                             onClick={() => router.push("/login")}
-                            className="bg-white/95 hover:bg-white text-[#003473] border-0 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 mb-3"
+                            className="bg-white/95 hover:bg-white text-[#003473] dark:bg-slate-800 dark:text-white dark:hover:bg-slate-700 border-0 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 mb-3"
                         >
                             Iniciar Sesión
                         </Button>
@@ -95,16 +95,16 @@ export default function LandingPage() {
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <div className="inline-block mb-6">
-                            <span className="px-4 py-2 rounded-full text-sm font-semibold text-[#003473] bg-[#EBB932]/20 border-2 border-[#EBB932]">
+                            <span className="px-4 py-2 rounded-full text-sm font-semibold text-[#003473] dark:text-[#EBB932] bg-[#EBB932]/20 dark:bg-[#EBB932]/10 border-2 border-[#EBB932]">
                                 Sistema Integral de Gestión
                             </span>
                         </div>
                         <h2 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                            <span className="text-[#003473] dark:text-blue-400">
+                            <span className="text-[#003473] dark:text-blue-300">
                                 Onboarding
                             </span>
                             <br />
-                            <span className="text-slate-700 dark:text-slate-300">
+                            <span className="text-slate-700 dark:text-slate-100">
                                 Efectivo
                             </span>
                         </h2>
@@ -127,7 +127,7 @@ export default function LandingPage() {
                                 size="lg"
                                 variant="outline"
                                 onClick={() => router.push("/login")}
-                                className="text-lg font-semibold border-2 border-[#003473] text-[#003473] hover:bg-[#003473] hover:text-white transition-all duration-300"
+                                className="text-lg font-semibold border-2 border-[#003473] text-[#003473] hover:bg-[#003473] hover:text-white dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-300 dark:hover:text-slate-900 transition-all duration-300"
                             >
                                 Iniciar Sesión
                             </Button>
@@ -136,9 +136,9 @@ export default function LandingPage() {
 
                     <div className="hidden lg:block relative">
                         <div className="relative w-full h-96">
-                            <div className="absolute top-0 right-0 w-72 h-72 bg-[#003473] rounded-3xl transform rotate-6 opacity-10"></div>
-                            <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#EBB932] rounded-3xl transform -rotate-6 opacity-10"></div>
-                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#CD3232] rounded-full opacity-5"></div>
+                            <div className="absolute top-0 right-0 w-72 h-72 bg-[#003473] dark:bg-blue-400 rounded-3xl transform rotate-6 opacity-10 dark:opacity-20"></div>
+                            <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#EBB932] rounded-3xl transform -rotate-6 opacity-10 dark:opacity-25"></div>
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#CD3232] dark:bg-red-400 rounded-full opacity-5 dark:opacity-15"></div>
                         </div>
                     </div>
                 </div>
@@ -151,16 +151,15 @@ export default function LandingPage() {
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="w-2 h-16 bg-gradient-to-b from-[#003473] via-[#EBB932] to-[#CD3232] rounded-full"></div>
                                 <div>
-                                    <h3 className="text-5xl lg:text-6xl font-bold text-[#003473] dark:text-blue-400">
+                                    <h3 className="text-5xl lg:text-6xl font-bold text-[#003473] dark:text-blue-300">
                                         Potencia tu Gestión
                                     </h3>
-                                    <p className="text-xl text-slate-600 dark:text-slate-400 mt-2">
+                                    <p className="text-xl text-slate-600 dark:text-slate-300 mt-2">
                                         Herramientas que marcan la diferencia
                                     </p>
                                 </div>
                             </div>
-                        </div>
-
+                        </div>{" "}
                         <div className="space-y-24">
                             {features.map((feature, index) => {
                                 const Icon = feature.icon;
@@ -184,16 +183,16 @@ export default function LandingPage() {
                                                 >
                                                     <Icon className="w-7 h-7 text-white" />
                                                 </div>
-                                                <span className="text-7xl font-bold text-slate-200 dark:text-slate-800">
+                                                <span className="text-7xl font-bold text-slate-200 dark:text-slate-600">
                                                     0{index + 1}
                                                 </span>
                                             </div>
 
-                                            <h4 className="text-3xl font-bold text-slate-800 dark:text-slate-100">
+                                            <h4 className="text-3xl font-bold text-slate-800 dark:text-slate-50">
                                                 {feature.title}
                                             </h4>
 
-                                            <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                                            <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
                                                 {feature.description}
                                             </p>
 
@@ -207,23 +206,23 @@ export default function LandingPage() {
                                         </div>
 
                                         <div className="flex-1 relative">
-                                            <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden">
+                                            <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800/50">
                                                 <div
-                                                    className="absolute inset-0 opacity-10"
+                                                    className="absolute inset-0 opacity-10 dark:opacity-20"
                                                     style={{
                                                         background: `linear-gradient(135deg, ${feature.color} 0%, transparent 100%)`,
                                                     }}
                                                 ></div>
                                                 <div className="absolute inset-0 flex items-center justify-center">
                                                     <div
-                                                        className="w-48 h-48 rounded-full opacity-20 blur-2xl"
+                                                        className="w-48 h-48 rounded-full opacity-20 dark:opacity-30 blur-2xl"
                                                         style={{
                                                             backgroundColor:
                                                                 feature.color,
                                                         }}
                                                     ></div>
                                                     <Icon
-                                                        className="absolute w-32 h-32 opacity-10"
+                                                        className="absolute w-32 h-32 opacity-10 dark:opacity-20"
                                                         style={{
                                                             color: feature.color,
                                                         }}
@@ -308,17 +307,17 @@ export default function LandingPage() {
                                     </div>
 
                                     <h3 className="text-4xl lg:text-5xl font-bold leading-tight">
-                                        <span className="text-[#003473] dark:text-blue-400">
+                                        <span className="text-[#003473] dark:text-blue-300">
                                             Simplifica
                                         </span>
                                         <br />
-                                        <span className="text-slate-700 dark:text-slate-300">
+                                        <span className="text-slate-700 dark:text-slate-100">
                                             el proceso de integración
                                         </span>
                                     </h3>
                                 </div>
 
-                                <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                                <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
                                     Descubre cómo nuestra plataforma revoluciona
                                     la experiencia de onboarding, reduciendo
                                     tiempos y aumentando la satisfacción de tus
@@ -344,10 +343,10 @@ export default function LandingPage() {
                                             key={i}
                                             className="flex items-center gap-3"
                                         >
-                                            <div className="w-10 h-10 rounded-lg bg-[#EBB932]/20 flex items-center justify-center text-xl">
+                                            <div className="w-10 h-10 rounded-lg bg-[#EBB932]/20 dark:bg-[#EBB932]/30 flex items-center justify-center text-xl">
                                                 {item.icon}
                                             </div>
-                                            <span className="text-slate-700 dark:text-slate-300 font-medium">
+                                            <span className="text-slate-700 dark:text-slate-100 font-medium">
                                                 {item.text}
                                             </span>
                                         </div>
@@ -377,19 +376,19 @@ export default function LandingPage() {
                                         </div>
 
                                         <div className="grid grid-cols-2 gap-6">
-                                            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                                            <div className="bg-white/10 dark:bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                                                 <div className="text-3xl font-bold text-[#EBB932] mb-2">
                                                     50%
                                                 </div>
-                                                <div className="text-sm text-blue-100">
+                                                <div className="text-sm text-blue-100 dark:text-slate-200">
                                                     Menos tiempo
                                                 </div>
                                             </div>
-                                            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                                            <div className="bg-white/10 dark:bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                                                 <div className="text-3xl font-bold text-[#EBB932] mb-2">
                                                     95%
                                                 </div>
-                                                <div className="text-sm text-blue-100">
+                                                <div className="text-sm text-blue-100 dark:text-slate-200">
                                                     Satisfacción
                                                 </div>
                                             </div>
