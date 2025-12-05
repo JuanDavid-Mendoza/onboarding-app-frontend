@@ -1,6 +1,7 @@
 **/node_modules
 node_modules
 dist
+out
 dist-ssr
 *.local
 
@@ -17,3 +18,13 @@ dist-ssr
 
 *.env
 **/.next
+
+# Terraform
+**/.terraform/
+**/.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfvars
+!terraform.auto.tfvars
+.terraformrc
+terraform.rc
